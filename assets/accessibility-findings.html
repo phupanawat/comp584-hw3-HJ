@@ -87,14 +87,14 @@
 <body>
 
 	<h1>Accessibility Tools Findings</h1>
-	<p class="subtitle">COMP 584 — HW3 · Tools explored: Chrome DevTools (Lighthouse), Axe DevTools, Silktide</p>
+	<p class="subtitle">COMP 584 - HW3 · Tools explored: Chrome DevTools (Lighthouse), Axe DevTools, Silktide</p>
 
 	<div class="summary-table-wrap">
 		<table class="summary-table">
 			<tr><th>Site tested</th><th>Lighthouse (Accessibility)</th><th>Axe</th><th>Silktide</th></tr>
 			<tr><td>My HW3 email (this assignment)</td><td>91</td><td>5 issues (color contrast)</td><td>15 issues (4 categories)</td></tr>
-			<tr><td>youtube.com</td><td>100</td><td>0 issues</td><td>Failed to scan — crashed</td></tr>
-			<tr><td>twitch.tv</td><td>100</td><td>Not tested</td><td>Failed to scan — crashed</td></tr>
+			<tr><td>youtube.com</td><td>100</td><td>0 issues</td><td>Failed to scan - crashed</td></tr>
+			<tr><td>twitch.tv</td><td>100</td><td>Not tested</td><td>Failed to scan - crashed</td></tr>
 		</table>
 	</div>
 
@@ -103,31 +103,31 @@
 	<h3>Chrome DevTools — Lighthouse</h3>
 	<p class="meta">Target: https://phupanawat.github.io/comp584-hw3-HJ/</p>
 	<div class="shots">
-		<figure><img src="screenshots/Screenshot 2026-09-18 154241.png"><figcaption>Lighthouse report — Accessibility score 91/100</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154241.png"><figcaption>Lighthouse report - Accessibility score 91/100</figcaption></figure>
 	</div>
 
 	<h3>Axe DevTools</h3>
 	<p class="meta">5 automatic issues found, all the same rule: "Elements must meet minimum color contrast ratio thresholds" (serious, WCAG 2 AA 1.4.3)</p>
 	<div class="shots two">
-		<figure><img src="screenshots/Screenshot 2026-09-18 154734.png"><figcaption>Issue 1/5 — "Limited-time member offer" label, contrast 3.18 (needs 4.5:1)</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 154744.png"><figcaption>Issue 2/5 — "SCENIC20" promo code, contrast 2.87</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 154753.png"><figcaption>Issue 3/5 — "Book your getaway" button text, contrast 3.18</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 154759.png"><figcaption>Issue 4/5 — "Offer ends..." fine print, contrast 3.19</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 154805.png"><figcaption>Issue 5/5 — "Read the travel guide" button text, contrast 3.18</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154734.png"><figcaption>Issue 1/5 - "Limited-time member offer" label, contrast 3.18 (needs 4.5:1)</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154744.png"><figcaption>Issue 2/5 - "SCENIC20" promo code, contrast 2.87</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154753.png"><figcaption>Issue 3/5 - "Book your getaway" button text, contrast 3.18</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154759.png"><figcaption>Issue 4/5 - "Offer ends..." fine print, contrast 3.19</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 154805.png"><figcaption>Issue 5/5 - "Read the travel guide" button text, contrast 3.18</figcaption></figure>
 	</div>
 
 	<h3>Silktide</h3>
 	<p class="meta">15 issues across 4 categories</p>
 	<div class="shots two">
 		<figure><img src="screenshots/Screenshot 2026-09-18 155058.png"><figcaption>Overview: Skip to content (1), Missing anchor (8), Text contrast (5), Semantic links (1)</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 155151.png"><figcaption>"Skip to content" — flags no skip-navigation link</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 155157.png"><figcaption>"Missing anchor" — 8 links point to in-page IDs that don't exist (placeholder hrefs)</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 155205.png"><figcaption>"Text contrast" — same 5 low-contrast elements Axe found</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 155211.png"><figcaption>"Semantic links" — nav links should be marked up as a list</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 155151.png"><figcaption>"Skip to content" - flags no skip-navigation link</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 155157.png"><figcaption>"Missing anchor" - 8 links point to in-page IDs that don't exist (placeholder hrefs)</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 155205.png"><figcaption>"Text contrast" - same 5 low-contrast elements Axe found</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 155211.png"><figcaption>"Semantic links" - nav links should be marked up as a list</figcaption></figure>
 	</div>
 
 	<div class="note">
-		<strong>Takeaway:</strong> Two independent tools (Axe and Silktide) agreed on the same root cause — my accent color <code>#d4775c</code> doesn't reach 4.5:1 contrast against white/cream backgrounds. That's a genuine, fixable bug and the clearest signal from this whole exercise: when multiple tools flag the identical issue, it's real, not a false positive.
+		<strong>Takeaway:</strong> Two independent tools (Axe and Silktide) agreed on the same root cause. My accent color <code>#d4775c</code> doesn't reach 4.5:1 contrast against white/cream backgrounds. That's a genuine, fixable bug and the clearest signal from this whole exercise: when multiple tools flag the identical issue, it's real, not a false positive.
 	</div>
 
 	<div class="page-break"></div>
@@ -136,17 +136,17 @@
 
 	<h3>YouTube (youtube.com)</h3>
 	<div class="shots two">
-		<figure><img src="screenshots/Screenshot 2026-09-18 160754.png"><figcaption>Lighthouse — Accessibility 100, Performance 34</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 161042.png"><figcaption>Lighthouse re-run — Accessibility 100, Performance 42</figcaption></figure>
-		<figure><img src="screenshots/Screenshot 2026-09-18 161129.png"><figcaption>Axe DevTools — 0 automatic issues found</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 160754.png"><figcaption>Lighthouse - Accessibility 100, Performance 34</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 161042.png"><figcaption>Lighthouse re-run - Accessibility 100, Performance 42</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 161129.png"><figcaption>Axe DevTools - 0 automatic issues found</figcaption></figure>
 	</div>
-	<p class="meta">Silktide would not load/scan this page — the extension repeatedly crashed on youtube.com.</p>
+	<p class="meta">Silktide would not load/scan this page - the extension repeatedly crashed on youtube.com.</p>
 
 	<h3>Twitch (twitch.tv)</h3>
 	<div class="shots">
-		<figure><img src="screenshots/Screenshot 2026-09-18 161853.png"><figcaption>Lighthouse — Accessibility 100, Best Practices 69, Performance 36</figcaption></figure>
+		<figure><img src="screenshots/Screenshot 2026-09-18 161853.png"><figcaption>Lighthouse - Accessibility 100, Best Practices 69, Performance 36</figcaption></figure>
 	</div>
-	<p class="meta">Silktide would not load/scan this page either — same crash behavior as on YouTube.</p>
+	<p class="meta">Silktide would not load/scan this page either - same crash behavior as on YouTube.</p>
 
 	<h2>3. Pros &amp; Cons by Tool</h2>
 
@@ -162,7 +162,7 @@
 		<div class="cons">
 			<h4>Chrome DevTools (Lighthouse) — Cons</h4>
 			<ul>
-				<li>Shallow automated checks — gave both YouTube and Twitch a perfect 100 despite likely real issues on such large, complex sites</li>
+				<li>Shallow automated checks - gave both YouTube and Twitch a perfect 100 despite likely real issues on such large, complex sites</li>
 				<li>No live overlay on the page; you don't see issues in context without switching panels</li>
 				<li>Doesn't point at the exact failing element the way Axe does</li>
 			</ul>
