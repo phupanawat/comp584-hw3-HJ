@@ -9,12 +9,12 @@
       /* CLIENT-SPECIFIC STYLES */
 			body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 			img { -ms-interpolation-mode: bicubic; }
-			
+
 			/* RESET STYLES */
 			img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
 			table { border-collapse: collapse !important; }
 			body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
-			
+
 			/* iOS BLUE LINKS */
 			a[x-apple-data-detectors] {
 			    color: inherit !important;
@@ -24,7 +24,7 @@
 			    font-weight: inherit !important;
 			    line-height: inherit !important;
 			}
-			
+
 			/* GMAIL BLUE LINKS */
 			u + #body a {
 			    color: inherit;
@@ -34,7 +34,7 @@
 			    font-weight: inherit;
 			    line-height: inherit;
 			}
-			
+
 			/* SAMSUNG MAIL BLUE LINKS */
 			#MessageViewBody a {
 			    color: inherit;
@@ -45,55 +45,139 @@
 			    line-height: inherit;
 			}
 
+			/* RESPONSIVENESS
+			   The inner content table is fixed at the email-standard 600px so the
+			   layout looks intentional on desktop mail clients that ignore @media
+			   (Outlook desktop, older webmail). On screens under 620px this rule
+			   lets that same table shrink to fill the viewport instead of causing
+			   horizontal scroll. */
+			@media only screen and (max-width: 620px) {
+				.email-container { width: 100% !important; max-width: 100% !important; }
+				.fluid-img { width: 100% !important; height: auto !important; }
+				.stack-padding { padding-left: 20px !important; padding-right: 20px !important; }
+				.mobile-button { width: 100% !important; }
+			}
 		</style>
 	</head>
 	<body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #eaf2f1; font-family: Arial, Helvetica, sans-serif; color: #183b43;">
-		<div style="width: 100%; background-color: #eaf2f1; padding: 20px 0;">
-			<div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
-				<div style="padding: 10px 24px; background-color: #eaf2f1; text-align: center;">
-					<p style="margin: 0; color: #557078; font-size: 11px; line-height: 1.5;">Your weekend getaway is waiting. <a href="#browser" style="color: #557078; text-decoration: underline;">View this email in your browser</a></p>
-				</div>
 
-				<div style="padding: 22px 32px; background-color: #183b43; text-align: center;">
-					<p style="margin: 0; color: #f5c76b; font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">NORTHSTAR</p>
-					<p style="margin: 7px 0 0; color: #ffffff; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Travel made memorable</p>
-				</div>
+		<!-- FULL-WIDTH OUTER TABLE: gives every email client a 100%-wide canvas to paint the page background on -->
+		<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #eaf2f1;">
+			<tr>
+				<td align="center" style="padding: 20px 0;">
 
-				<div style="padding: 12px 32px; border-bottom: 1px solid #dfe9e7; text-align: center;">
-					<a href="#destinations" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Destinations</a>
-					<a href="#stays" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Stays</a>
-					<a href="#inspiration" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Inspiration</a>
-				</div>
+					<!-- INNER FIXED TABLE: 600px is the standard safe width for HTML email (fits every major inbox preview pane without horizontal scroll) -->
+					<table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width: 600px; max-width: 600px; background-color: #ffffff;">
 
-				<div style="position: relative;">
-					<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80" alt="A quiet mountain lake surrounded by trees" width="600" style="display: block; width: 100%; height: auto;">
-				</div>
+						<!-- PREHEADER -->
+						<tr>
+							<td class="stack-padding" align="center" style="padding: 10px 24px; background-color: #eaf2f1;">
+								<p style="margin: 0; color: #557078; font-size: 11px; line-height: 1.5;">Your weekend getaway is waiting. <a href="#browser" style="color: #557078; text-decoration: underline;">View this email in your browser</a></p>
+							</td>
+						</tr>
 
-				<div style="padding: 32px 32px 36px; text-align: center;">
-					<p style="margin: 0 0 10px; color: #d4775c; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Limited-time member offer</p>
-					<h1 style="margin: 0; color: #183b43; font-size: 38px; line-height: 1.1;">Save 20% on your next escape</h1>
-					<p style="margin: 16px auto 22px; max-width: 450px; color: #557078; font-size: 16px; line-height: 1.6;">Take the scenic route to a refreshing weekend away. Choose your destination and we will take care of the rest.</p>
-					<div style="display: inline-block; padding: 11px 18px; background-color: #f8f3e8; border: 1px dashed #d4775c;">
-						<span style="color: #183b43; font-size: 12px; font-weight: bold; letter-spacing: 1px;">USE CODE: </span><span style="color: #d4775c; font-size: 14px; font-weight: bold; letter-spacing: 2px;">SCENIC20</span>
-					</div>
-					<div style="padding-top: 24px;">
-						<a href="#explore" style="display: inline-block; padding: 15px 32px; background-color: #d4775c; color: #ffffff; font-size: 14px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Book your getaway</a>
-					</div>
-					<p style="margin: 16px 0 0; color: #829397; font-size: 11px; line-height: 1.5;">Offer ends May 31, 2026. Terms and conditions apply.</p>
-				</div>
+						<!-- BRAND HEADER -->
+						<tr>
+							<td class="stack-padding" align="center" style="padding: 22px 32px; background-color: #183b43;">
+								<p style="margin: 0; color: #f5c76b; font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">NORTHSTAR</p>
+								<p style="margin: 7px 0 0; color: #ffffff; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Travel made memorable</p>
+							</td>
+						</tr>
 
-				<div style="padding: 24px 32px; background-color: #f3f7f6; text-align: center;">
-					<p style="margin: 0 0 8px; color: #183b43; font-size: 14px; font-weight: bold;">Need inspiration?</p>
-					<p style="margin: 0; color: #557078; font-size: 13px; line-height: 1.6;">Browse our handpicked stays, local guides, and ideas for your next adventure.</p>
-					<a href="#guides" style="display: inline-block; margin-top: 12px; color: #d4775c; font-size: 12px; font-weight: bold; text-decoration: underline; text-transform: uppercase;">Read the travel guide</a>
-				</div>
+						<!-- NAV -->
+						<tr>
+							<td class="stack-padding" align="center" style="padding: 12px 32px; border-bottom: 1px solid #dfe9e7;">
+								<a href="#destinations" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Destinations</a>
+								<a href="#stays" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Stays</a>
+								<a href="#inspiration" style="margin: 0 12px; color: #557078; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase;">Inspiration</a>
+							</td>
+						</tr>
 
-				<div style="padding: 22px 32px; background-color: #183b43; text-align: center;">
-					<p style="margin: 0 0 8px; color: #ffffff; font-size: 12px; line-height: 1.5;">Northstar Travel Co. &bull; 18 Evergreen Way, Portland, OR</p>
-					<p style="margin: 0; color: #c1d1cf; font-size: 11px; line-height: 1.5;"><a href="#preferences" style="color: #f5c76b; text-decoration: underline;">Manage preferences</a> &nbsp;|&nbsp; <a href="#unsubscribe" style="color: #f5c76b; text-decoration: underline;">Unsubscribe</a></p>
-				</div>
-			</div>
-		</div>
+						<!-- HERO IMAGE (responsive: fixed width attribute for Outlook, fluid CSS width for everyone else) -->
+						<tr>
+							<td>
+								<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80" alt="A quiet mountain lake surrounded by trees" width="600" class="fluid-img" style="display: block; width: 100%; max-width: 600px; height: auto;">
+							</td>
+						</tr>
+
+						<!-- OFFER + PRIMARY BUTTON (approach 1: bulletproof table/VML button, safest for Outlook desktop) -->
+						<tr>
+							<td class="stack-padding" align="center" style="padding: 32px 32px 36px;">
+								<p style="margin: 0 0 10px; color: #d4775c; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Limited-time member offer</p>
+								<h1 style="margin: 0; color: #183b43; font-size: 38px; line-height: 1.1;">Save 20% on your next escape</h1>
+								<p style="margin: 16px auto 22px; max-width: 450px; color: #557078; font-size: 16px; line-height: 1.6;">Take the scenic route to a refreshing weekend away. Choose your destination and we will take care of the rest.</p>
+								<div style="display: inline-block; padding: 11px 18px; background-color: #f8f3e8; border: 1px dashed #d4775c;">
+									<span style="color: #183b43; font-size: 12px; font-weight: bold; letter-spacing: 1px;">USE CODE: </span><span style="color: #d4775c; font-size: 14px; font-weight: bold; letter-spacing: 2px;">SCENIC20</span>
+								</div>
+
+								<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 26px auto 0;">
+									<tr>
+										<td align="center" bgcolor="#d4775c" style="border-radius: 4px;">
+											<!--[if mso]>
+											<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#explore" style="height:48px;v-text-anchor:middle;width:240px;" arcsize="8%" stroke="f" fillcolor="#d4775c">
+											<w:anchorlock/>
+											<center style="color:#ffffff;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;letter-spacing:1px;">BOOK YOUR GETAWAY</center>
+											</v:roundrect>
+											<![endif]-->
+											<!--[if !mso]><!-->
+											<a href="#explore" class="mobile-button" style="background-color: #d4775c; border-radius: 4px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: bold; letter-spacing: 1px; line-height: 48px; padding: 0 36px; text-align: center; text-decoration: none; text-transform: uppercase; -webkit-text-size-adjust: none;">Book your getaway</a>
+											<!--<![endif]-->
+										</td>
+									</tr>
+								</table>
+
+								<p style="margin: 16px 0 0; color: #829397; font-size: 11px; line-height: 1.5;">Offer ends May 31, 2026. Terms and conditions apply.</p>
+							</td>
+						</tr>
+
+						<!-- INSPIRATION SECTION: background image on the text area, with a solid bgcolor fallback -->
+						<tr>
+							<td class="stack-padding" align="center" bgcolor="#f3f7f6" background="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60" style="padding: 0; background-color: #f3f7f6; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60'); background-size: cover; background-position: center;">
+								<!--[if mso]>
+								<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
+								<v:fill type="frame" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=60" color="#f3f7f6" />
+								<v:textbox inset="0,0,0,0">
+								<![endif]-->
+								<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+									<tr>
+										<td class="stack-padding" align="center" style="padding: 40px 32px;">
+											<!-- semi-opaque panel keeps the text readable over the photo -->
+											<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: rgba(255,255,255,0.88); border-radius: 6px;">
+												<tr>
+													<td style="padding: 20px 26px;">
+														<p style="margin: 0 0 8px; color: #183b43; font-size: 14px; font-weight: bold;">Need inspiration?</p>
+														<p style="margin: 0; color: #557078; font-size: 13px; line-height: 1.6;">Browse our handpicked stays, local guides, and ideas for your next adventure.</p>
+
+														<!-- SECONDARY BUTTON (approach 2: plain padded anchor, no VML/table wrapper — simpler markup, still centers and clicks easily) -->
+														<a href="#guides" style="display: inline-block; margin-top: 16px; padding: 12px 26px; background-color: #ffffff; border: 2px solid #d4775c; color: #d4775c; font-size: 12px; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px;">Read the travel guide</a>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								<!--[if mso]>
+								</v:textbox>
+								</v:rect>
+								<![endif]-->
+							</td>
+						</tr>
+
+						<!-- FOOTER -->
+						<tr>
+							<td class="stack-padding" align="center" style="padding: 22px 32px; background-color: #183b43;">
+								<p style="margin: 0 0 8px; color: #ffffff; font-size: 12px; line-height: 1.5;">Northstar Travel Co. &bull; 18 Evergreen Way, Portland, OR</p>
+								<p style="margin: 0; color: #c1d1cf; font-size: 11px; line-height: 1.5;"><a href="#preferences" style="color: #f5c76b; text-decoration: underline;">Manage preferences</a> &nbsp;|&nbsp; <a href="#unsubscribe" style="color: #f5c76b; text-decoration: underline;">Unsubscribe</a></p>
+							</td>
+						</tr>
+
+					</table>
+					<!-- END INNER FIXED TABLE (600px) -->
+
+				</td>
+			</tr>
+		</table>
+		<!-- END FULL-WIDTH OUTER TABLE -->
 
 	</body>
 </html>
